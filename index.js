@@ -28,18 +28,19 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+    // Counter1 returns a closure / function while Counter 2 just returns the actual counter incremented up one
   
   2. Which of the two uses a closure? How can you tell?
-  
-  3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
-*/
+    // Counter1 because it's returning a function
 
+  3. In what scenario would the counter1 code be preferable? In what scenario would 
+    counter2 be better?  
+*/
 // counter1 code
 function counterMaker() {
   let count = 0;
   return function counter() {
-   return count++;
+    return count++;
   }
 }
 
@@ -62,9 +63,16 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
-}
+function inning(){
+  let score = Math.random()
+  if (score <= 0.33) {
+    return 0;
+  } else if (score > 0.33 && score < 0.66) {
+    return 1;
+  } else {
+    return 2;
+  }
+};
 
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
