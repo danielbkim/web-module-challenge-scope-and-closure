@@ -113,6 +113,7 @@ function getInningScore(func) {
 }
 
 
+
 /* ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
 Use the scoreboard function below to do the following:
   1. Receive the callback function `getInningScore` from Task 4
@@ -121,8 +122,9 @@ Use the scoreboard function below to do the following:
   4. Return an array where each of it's index values equals a string stating the
   Home and Away team's scores for each inning.  Not the cummulative score.
   5. If there's a tie at the end of the innings, add this message containing the score to the end of the array:  "This game will require extra innings: Away 12 - Home 12"  (see tie example below)
-     If there isn't a tie, add this message to the end of the array: "Final Score: Away 13 - Home 11"  (see no tie example below)
-  
+    If there isn't a tie, add this message to the end of the array: "Final Score: Away 13 - Home 11"  (see no tie example below)
+
+
   NO TIE example: invoking scoreboard(getInningScore,inning, 9) might return 
   an array of strings like this:
 [
@@ -154,8 +156,16 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(scoreFunc, inningFunc, inning) {
+  // create the array that you will be returning
+  let game = [];
+  // loop through all of the innings and push in the scores for home and away teams
+  // 
+  for (let i = 1; i < 10; i++){
+    let score = `Inning ${i}: Away ${inningFunc()} - Home ${inningFunc()}`
+    game.push(score);
+  }
+
 }
 
 
